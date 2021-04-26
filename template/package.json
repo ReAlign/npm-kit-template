@@ -1,0 +1,48 @@
+{
+  "name": "<%= packageName %>",
+  "description": "<%= description =>",
+  "source": "src/index.ts",
+  "main": "dist/<%= packageName %>.js",
+  "browser": "dist/<%= packageName %>.umd.js",
+  "umd:main": "dist/<%= packageName %>.umd.js",
+  "jsnext:main": "dist/<%= packageName %>.modern.js",
+  "module": "dist/<%= packageName %>.module.js",
+  "syntax": {
+    "esmodules": "dist/<%= packageName %>.modern.js"
+  },
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "dist/<%= packageName %>.module.js",
+      "umd": "dist/<%= packageName %>.umd.js",
+      "import": "dist/<%= packageName %>.module.js",
+      "require": "dist/<%= packageName %>.js"
+    }
+  },
+  "scripts": {
+    "rmdist": "rimraf dist/",
+    "dev:watch": "microbundle watch --name <%= libraryName %> --output dist/",
+    "dev": "npm run rmdist && npm run dev:watch",
+    "build:uncompressed": "microbundle --no-sourcemap --no-compress --name <%= libraryName %> --output dist/",
+    "build": "npm run rmdist && npm run build:uncompressed"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^24.9.0",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-import": "^2.8.0",
+    "fs-extra": "^9.0.1",
+    "jest": "^24.9.0",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2"
+  }
+}
