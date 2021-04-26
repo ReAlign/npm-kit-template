@@ -1,30 +1,30 @@
 {
-  "name": "<%= packageName %>",
-  "description": "<%= description =>",
+  "name": "package-name",
+  "description": "description",
   "source": "src/index.ts",
-  "main": "dist/<%= packageName %>.js",
-  "browser": "dist/<%= packageName %>.umd.js",
-  "umd:main": "dist/<%= packageName %>.umd.js",
-  "jsnext:main": "dist/<%= packageName %>.modern.js",
-  "module": "dist/<%= packageName %>.module.js",
+  "main": "dist/package-name.js",
+  "browser": "dist/package-name.umd.js",
+  "umd:main": "dist/package-name.umd.js",
+  "jsnext:main": "dist/package-name.modern.js",
+  "module": "dist/package-name.module.js",
   "syntax": {
-    "esmodules": "dist/<%= packageName %>.modern.js"
+    "esmodules": "dist/package-name.modern.js"
   },
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "exports": {
     ".": {
-      "browser": "dist/<%= packageName %>.module.js",
-      "umd": "dist/<%= packageName %>.umd.js",
-      "import": "dist/<%= packageName %>.module.js",
-      "require": "dist/<%= packageName %>.js"
+      "browser": "dist/package-name.module.js",
+      "umd": "dist/package-name.umd.js",
+      "import": "dist/package-name.module.js",
+      "require": "dist/package-name.js"
     }
   },
   "scripts": {
     "rmdist": "rimraf dist/",
-    "dev:watch": "microbundle watch --name <%= libraryName %> --output dist/",
+    "dev:watch": "microbundle watch --name libraryName --output dist/",
     "dev": "npm run rmdist && npm run dev:watch",
-    "build:uncompressed": "microbundle --no-sourcemap --no-compress --name <%= libraryName %> --output dist/",
+    "build:uncompressed": "microbundle --no-sourcemap --no-compress --name libraryName --output dist/",
     "build": "npm run rmdist && npm run build:uncompressed"
   },
   "devDependencies": {
