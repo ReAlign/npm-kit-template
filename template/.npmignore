@@ -1,5 +1,12 @@
-# build ignore
-/dist
+# npm ignore
+demo
+src
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.npmrc
+tsconfig.json
 
 # common ignore
 .DS_Store

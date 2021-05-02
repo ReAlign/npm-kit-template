@@ -3,46 +3,25 @@
   "description": "description",
   "source": "src/index.ts",
   "main": "dist/package-name.js",
-  "browser": "dist/package-name.umd.js",
-  "umd:main": "dist/package-name.umd.js",
-  "jsnext:main": "dist/package-name.modern.js",
   "module": "dist/package-name.module.js",
-  "syntax": {
-    "esmodules": "dist/package-name.modern.js"
+  "unpkg": "dist/package-name.umd.js",
+  "exports": {
+    ".": "./dist/package-name.modern.js"
   },
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "browser": "dist/package-name.module.js",
-      "umd": "dist/package-name.umd.js",
-      "import": "dist/package-name.module.js",
-      "require": "dist/package-name.js"
-    }
-  },
   "scripts": {
     "rmdist": "rimraf dist/",
-    "dev:watch": "microbundle watch --name libraryName --output dist/",
+    "dev:watch": "microbundle watch --no-compress --external none --name libraryName --output dist/",
     "dev": "npm run rmdist && npm run dev:watch",
-    "build:uncompressed": "microbundle --no-sourcemap --no-compress --name libraryName --output dist/",
-    "build": "npm run rmdist && npm run build:uncompressed"
+    "build:uncompressed": "microbundle --no-sourcemap --external none --name libraryName --output dist/",
+    "build": "npm run rmdist && npm run build:uncompressed",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-transform-regenerator": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "babel-eslint": "^8.1.2",
-    "babel-jest": "^24.9.0",
-    "eslint": "^4.14.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-flowtype": "^2.40.1",
-    "eslint-plugin-import": "^2.8.0",
-    "fs-extra": "^9.0.1",
-    "jest": "^24.9.0",
-    "microbundle": "^0.11.0",
-    "prettier": "^1.19.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.25.0",
+    "microbundle": "^0.13.0",
     "rimraf": "^3.0.2"
   }
 }

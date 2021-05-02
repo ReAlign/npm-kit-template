@@ -1,8 +1,11 @@
-const Main = {
-  x(cc: any) {
-    // eslint-disable-next-line no-console
-    console.log(cc || 'x');
-  },
-  name: '_name_',
-};
+class Main {
+  name: string;
+  constructor(name: string) {
+    this.name = name || 'realign';
+  }
+  public getName(): string {
+    return this.name;
+  }
+}
+
 export default Main;
