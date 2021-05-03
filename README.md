@@ -1,4 +1,4 @@
-# rollup-kit-template
+# npm-kit-template
 
 ## 1. install
 
@@ -16,5 +16,5 @@ $ git clone xxx/.git
 
 ```bash
 $ cd xxx
-$ sao ReAlign/rollup-kit-template
+$ sao ReAlign/npm-kit-template
 ```
